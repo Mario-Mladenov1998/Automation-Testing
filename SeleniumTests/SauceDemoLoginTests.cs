@@ -2,8 +2,7 @@
 using NUnit.Framework.Internal;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+using OpenQA.Selenium.Support.UI;
 
 
 
@@ -13,6 +12,7 @@ using System.Xml.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
@@ -154,5 +154,62 @@ namespace SeleniumTests
 
             Assert.That(cartIcon.Displayed, Is.True);
         }
+
+        [Test]
+        public void Sort_Products_By_Price_Low_To_High()
+        {
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            var username = driver.FindElement(By.Id("user-name"));
+            username.SendKeys("standard_user");
+
+            var password = driver.FindElement(By.Id("password"));
+            password.SendKeys("secret_sauce");
+
+            var loginButton = driver.FindElement(By.Id("login-button"));
+            loginButton.Click();
+
+            var sortDropDown = driver.FindElement(By.ClassName("product_sort_container"));
+            var select = new SelectElement(sortDropDown);
+
+            select.SelectByValue("lohi");
+
+            var firstPrice = driver.FindElement(By.ClassName("inventory_item_price")).Text;
+
+            Assert.That(firstPrice, Does.Contain("7.99"));
+        }
+
+        [Test]
+        public void Complete_Checkout_Flow()
+        {
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            var username = driver.FindElement(By.Id("user-name"));
+            username.SendKeys("standard_user");
+
+            var password = driver.FindElement(By.Id("password"));
+            password.SendKeys("secret_sauce");
+
+            var loginButton = driver.FindElement(By.Id("login-button"));
+            loginButton.Click();
+
+            var addToCartButton = driver.FindElement(By.Id("add-to-cart-sauce-labs-backpack"));
+            addToCartButton.Click();
+
+            var cartIcon = driver.FindElement(By.ClassName("shopping_cart_link"));
+            cartIcon.Click();
+
+            driver.FindElement(By.Id("checkout")).Click();
+
+            driver.FindElement(By.Id("first-name")).SendKeys("Mario");
+            driver.FindElement(By.Id("last-name")).SendKeys("Mladenov");
+
+            driver.FindElement(By.Id("postal-code")).SendKeys("1000");
+            driver.FindElement(By.Id("continue")).Click();
+            driver.FindElement(By.Id("finish")).Click();
+
+            var successMessage = driver.FindElement(By.ClassName("complete-header"));
+
+            Assert.That(successMessage.Text, Does.Contain("Thank you"));
+        }
     }
 }
+
