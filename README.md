@@ -56,8 +56,8 @@ SauceDemoLoginTests.cs
 
 1. Open the project in **Visual Studio**
 2. Restore NuGet packages
-3. Open **Test Explorer**
-4. Click **Run All Tests**
+3. Build the project
+4. Run tests from **Test Explorer**
 
 ---
 
