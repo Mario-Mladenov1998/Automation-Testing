@@ -1,59 +1,74 @@
-EADME
-# Selenium Login Page Tests
+# Selenium UI Test Automation
 
-This project contains automated UI tests for the Login page of the Automation Exercise website.
+This project contains automated UI tests written in **C# using Selenium WebDriver and NUnit**.
 
-The tests are written in **C# using Selenium WebDriver and NUnit** and verify that the login page and its core elements are working correctly.
+The goal of the project is to demonstrate basic web automation testing skills including browser interaction, element validation, and functional UI testing.
+
+---
 
 ## Technologies Used
 
-# C#
-# .NET
-# Selenium WebDriver
-# NUnit
-# Visual Studio
+- C#
+- .NET
+- Selenium WebDriver
+- NUnit
+- Visual Studio
 
-## Test Website
+---
 
-https://automationexercise.com/login
+## Tested Websites
 
-## Automated Test Cases
+Automation Exercise  
+https://automationexercise.com
 
-The following UI tests are implemented:
+SauceDemo  
+https://www.saucedemo.com
 
-1. **Open_Login_Page**
-   # Navigates to the login page
-   # Verifies that the page title contains "Automation"
+---
 
-2. **Login_Page_Contains_Email_Field**
-   # Opens the login page
-   # Verifies that the Email input field is visible
+## Automated Test Scenarios
 
-3. **Login_Page_Contains_Password_Field**
-   # Opens the login page
-   # Verifies that the Password input field is visible
+### Automation Exercise Tests
+- Opens the login page
+- Verifies that the page title contains "Automation"
+- Verifies that the Email input field is visible
+- Verifies that the Password input field is visible
+- Verifies that the URL contains "login"
 
-4. **Login_Page_Url_Is_Correct**
-   # Opens the login page
-   # Verifies that the URL contains "login"
+### SauceDemo Tests
+- Login with valid credentials
+- Login with invalid credentials
+- Verify products page loads after login
+- Add product to cart
+- Remove product from cart
 
+---
 ## Project Structure
 
 
+SeleniumTests
+LoginTests.cs
+SauceDemoLoginTests.cs
 
+
+---
 
 ## How to Run the Tests
 
 1. Open the project in **Visual Studio**
 2. Restore NuGet packages
 3. Open **Test Explorer**
-4. Run the tests
+4. Click **Run All Tests**
 
-## Purpose
+---
 
-This project demonstrates basic **UI automation testing using Selenium and NUnit**, including:
+## Purpose of the Project
 
-# Browser automation
-# Element validation
-# Page verification
-# Basic test structure
+This project demonstrates:
+
+- Browser automation
+- UI element validation
+- Basic functional testing
+- Automated test structure using Selenium and NUnit
+## Project Structure
+
