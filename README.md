@@ -1,5 +1,3 @@
-# UI Automation project using Selenium WebDriver, C#, and NUnit.
-
 # UI automation project built with **Selenium WebDriver**, **C#**, and **NUnit**.
 The project demonstrates automated testing of login functionality and e-commerce user flows.
 
