@@ -1,8 +1,7 @@
-# Selenium UI Test Automation
+# UI Automation project using Selenium WebDriver, C#, and NUnit.
 
-This project contains automated UI tests written in **C# using Selenium WebDriver and NUnit**.
-
-The goal of the project is to demonstrate basic web automation testing skills including browser interaction, element validation, and functional UI testing.
+# UI automation project built with **Selenium WebDriver**, **C#**, and **NUnit**.
+The project demonstrates automated testing of login functionality and e-commerce user flows.
 
 ---
 
@@ -41,6 +40,8 @@ https://www.saucedemo.com
 - Verify products page loads after login
 - Add product to cart
 - Remove product from cart
+- Sort products by price (Low --> High)
+- Complete checkout flow
 
 ---
 ## Project Structure
@@ -71,4 +72,9 @@ This project demonstrates:
 - Basic functional testing
 - Automated test structure using Selenium and NUnit
 ## Project Structure
+- SeleniumTests/
+- LoginTests.cs
+- SauceDemoLoginTests.cs
+- SeleniumTests.csproj
+- README.md
 
